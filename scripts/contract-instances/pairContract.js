@@ -5,7 +5,7 @@ const pairInterfaceArtifact = artifacts.readArtifactSync(
 );
 
 /**
- * getPairContract() creates and return the instance of the pair factory contract
+ * getPairContract() creates and return the instance of the pairContract
  * @param {string} contract_address  address of the pairContract
  * @param {string} provider_urlrpc rpc url of the node provider.
  * @returns {object} contractInstance of the paircontract
