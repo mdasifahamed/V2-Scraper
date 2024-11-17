@@ -4,7 +4,7 @@ const tokenInterfaceArtifact = artifacts.readArtifactSync(
   "contracts/interfaces/IERC20.sol:IERC20"
 );
 /**
- * getPairContract() creates and return the instance of the tokenContract
+ * getTokenContract() creates and return the instance of the tokenContract
  * @param {string} contract_address  address of the tokenContract
  * @param {string} provider_urlrpc rpc url of the node provider.
  * @returns {object} contractInstance of the tokenContract
