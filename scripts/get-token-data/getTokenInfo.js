@@ -4,7 +4,7 @@ const { getTokenContract } = require("../contract-instances/tokenContract");
  * getTokenInfo() retruns interested TokenInfo as object
  * @param {string} _tokenAddress address of the tokenContract
  * @param {string} _provider_url rpc url of the node provider
- * @returns {object} containing tokenName and tokenSymbol
+ * @returns {object} containing tokenName, tokenSymbol and tokenDecimal
  */
 async function getTokenInfo(_tokenAddress, _provider_url) {
   try {
@@ -15,7 +15,13 @@ async function getTokenInfo(_tokenAddress, _provider_url) {
 
     const tokenName = await tokenContract.name();
     const tokenSymbol = await tokenContract.symbol();
-    return { tokenName: tokenName, tokenSymbol: tokenSymbol };
+    const tokenDecimal = await tokenContract.decimals();
+
+    return {
+      tokenName: tokenName,
+      tokenSymbol: tokenSymbol,
+      tokenDecimal: tokenDecimal,
+    };
   } catch (error) {
     console.log("Error at getTokenInfo.js: ");
     console.log(error);
