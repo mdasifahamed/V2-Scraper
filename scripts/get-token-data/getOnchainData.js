@@ -8,12 +8,16 @@ const { getTokenInfo } = require("./getTokenInfo");
  * @param {string} _factoryContractAddress factory contract address
  * @param {string} _provider_url rpc url of the node privder
  * @param {string} _filename name of the json file to store the tokenPairInfo
+ * @param {number} startFrom starting index from which number user want to pull information
+ * @param {number} endFrom ending index till which number user want to pull information
  */
 
 async function getTokenDataAndWrite(
   _factoryContractAddress,
   _provider_url,
-  _filename
+  _filename,
+  startFrom,
+  endTo
 ) {
   const pairslength = await getPairslength(
     _factoryContractAddress,
@@ -24,9 +28,14 @@ async function getTokenDataAndWrite(
   }
 
   let pairList = [];
+  if (startFrom === 0 || startFrom < 0 || endTo === 0 || endTo < 0) {
+    throw new Error("Strating Or Ending Index Cannot Be 0 Negative");
+  }
+  startFrom = startFrom ? startFrom - 1 : 0;
+  endTo = endTo ? endTo + 1 : pairslength;
 
   try {
-    for (let i = 0; i < pairslength; i++) {
+    for (let i = startFrom; i < endTo; i++) {
       try {
         const pairAddress = await getPairsAddress(
           _factoryContractAddress,
@@ -64,7 +73,9 @@ async function getTokenDataAndWrite(
         });
 
         console.log(
-          `Pair ${i} Token Information Fetched And Stored To ${_filename}.json File`
+          `Pair ${
+            i + 1
+          } Token Information Fetched And Stored To ${_filename}.json File`
         );
       } catch (pairError) {
         console.log(`Error at pair ${i}: ${pairError}`);
