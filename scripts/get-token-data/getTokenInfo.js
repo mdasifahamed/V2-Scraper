@@ -1,3 +1,4 @@
+const { ethers } = require("hardhat");
 const { getTokenContract } = require("../contract-instances/tokenContract");
 
 /**
@@ -20,7 +21,7 @@ async function getTokenInfo(_tokenAddress, _provider_url) {
     return {
       tokenName: tokenName,
       tokenSymbol: tokenSymbol,
-      tokenDecimal: tokenDecimal,
+      tokenDecimal: parseInt(ethers.formatEther(tokenDecimal)),
     };
   } catch (error) {
     console.log("Error at getTokenInfo.js: ");
