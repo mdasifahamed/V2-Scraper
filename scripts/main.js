@@ -9,13 +9,24 @@ const { getTokenDataAndWrite } = require("./get-token-data/getOnchainData");
  * @param {string} _factoryContractAddress contract address of a factory
  * @param {string} _provider_url rpc url of the node provider
  * @param {string} _fileName name of the json file to store the tokenPairInfo
+ * @param {number} startFrom starting index from which number user want to pull information
+ * @param {number} endFrom ending index till which number user want to pull information
+ *
  */
-async function main(_factoryContractAddress, _provider_url, _fileName) {
+async function main(
+  _factoryContractAddress,
+  _provider_url,
+  _fileName,
+  startFrom,
+  endTo
+) {
   try {
     await getTokenDataAndWrite(
       _factoryContractAddress,
       _provider_url,
-      _fileName
+      _fileName,
+      startFrom,
+      endTo
     );
   } catch (error) {
     console.log(error);
@@ -25,7 +36,9 @@ async function main(_factoryContractAddress, _provider_url, _fileName) {
 main(
   factoryAddresses.UniSwap.Ethereum,
   mainnet_RPC_URL.Ethereum,
-  "Uniswap-Ethereum"
+  "Uniswap-Ethereum",
+  1,
+  500
 ).catch((error) => {
   console.log(error);
   process.exit(1);
