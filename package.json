@@ -3,5 +3,8 @@
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "dotenv": "^16.4.5",
     "hardhat": "^2.22.15"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
   }
 }
