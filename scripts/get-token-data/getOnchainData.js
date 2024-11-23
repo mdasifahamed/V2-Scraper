@@ -46,9 +46,11 @@ async function getTokenDataAndWrite(
           PairAddress: pairAddress,
           Token0Name: token0Info.tokenName,
           Token0Symbol: token0Info.tokenSymbol,
+          Token0Decimals: token0Info.tokenDecimal,
           Token0Address: token0Address,
           Token1Name: token1InFo.tokenName,
           Token1Symbol: token1InFo.tokenSymbol,
+          Token1Decimals: token1InFo.tokenDecimal,
           Token1Address: token1Address,
         };
 
