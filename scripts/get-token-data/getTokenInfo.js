@@ -21,7 +21,7 @@ async function getTokenInfo(_tokenAddress, _provider_url) {
     return {
       tokenName: tokenName,
       tokenSymbol: tokenSymbol,
-      tokenDecimal: parseInt(ethers.formatEther(tokenDecimal)),
+      tokenDecimal: parseInt(tokenDecimal),
     };
   } catch (error) {
     console.log("Error at getTokenInfo.js: ");
