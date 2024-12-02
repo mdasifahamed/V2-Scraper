@@ -2,6 +2,7 @@ const fs = require("fs");
 const { getPairContract } = require("../contract-instances/pairContract");
 const { getPairslength, getPairsAddress } = require("./getPairsInfo");
 const { getTokenInfo } = require("./getTokenInfo");
+const { ethers } = require("hardhat");
 
 /**
  * getTokenDataAndWrite() reads oncahin tokenInfo of a pairs and store them in json file.
@@ -48,6 +49,7 @@ async function getTokenDataAndWrite(
         );
         const token0Address = await pairContract.token0();
         const token1Address = await pairContract.token1();
+        const [reserve0, reserve1] = await pairContract.getReserves();
         const token0Info = await getTokenInfo(token0Address, _provider_url);
         const token1InFo = await getTokenInfo(token1Address, _provider_url);
 
@@ -57,10 +59,18 @@ async function getTokenDataAndWrite(
           Token0Symbol: token0Info.tokenSymbol,
           Token0Decimals: token0Info.tokenDecimal,
           Token0Address: token0Address,
+          Token0Reserve: ethers.formatUnits(
+            reserve0,
+            parseInt(token0Info.tokenDecimal)
+          ),
           Token1Name: token1InFo.tokenName,
           Token1Symbol: token1InFo.tokenSymbol,
           Token1Decimals: token1InFo.tokenDecimal,
           Token1Address: token1Address,
+          Token1Reserve: ethers.formatUnits(
+            reserve1,
+            parseInt(token1InFo.tokenDecimal)
+          ),
         };
 
         pairList.push(pairInfo);
