@@ -25,6 +25,7 @@ A project for collecting and analyzing on-chain data from DeFi platforms like Un
    git clone https://github.com/mdasifahamed/READ-On-Chain-Data.git
    cd READ-On-Chain-Data
    npm install
+   npx hardhat compile
 ```
 
 3. **Setup the factory addresses**:
