@@ -61,7 +61,7 @@ async function main(
    If everthing is configured up properly you have to run the following command to use it .
 
 ```bash
-    node script/main.js
+    node scripts/main.js
 ```
 
 ## Bonus
@@ -84,7 +84,7 @@ jsonToXlsx(DexName_ChainName, "YourExpectdFileName.xlsx");// `YourExpectdFileNam
 2. Run the following command from the terminal
 
 ```bash
-    node script/utils/jsonToExcel.js
+    node scripts/utils/jsonToExcel.js
 ```
 
 ## How It Works
