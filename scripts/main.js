@@ -33,13 +33,15 @@ async function main(
   }
 }
 
-main(
-  factoryAddresses.UniSwap.Ethereum,
-  mainnet_RPC_URL.Ethereum,
-  "Uniswap-Ethereum",
-  1,
-  500
-).catch((error) => {
-  console.log(error);
-  process.exit(1);
+Object.keys(factoryAddresses).forEach((protocol) => {
+  Object.keys(factoryAddresses[protocol]).forEach((network) => {
+    const factoryAddress = factoryAddresses[protocol][network];
+    const rpcUrl = mainnet_RPC_URL[network];
+    const fileName = `${protocol}-${network}`;
+    main(factoryAddress, rpcUrl, fileName, 1, 5)
+      .catch((error) => {
+        console.log(`Error processing ${fileName}:`, error);
+        process.exit(1);
+      });
+  });
 });

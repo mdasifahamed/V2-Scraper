@@ -22,5 +22,17 @@
   "Plogygon-Mainnet": "https://polygon-rpc.com/",
   "Arbitum-Nova": "https://nova.arbitrum.io/rpc",
   "Zora": "https://rpc.zora.energy",
-  "WorldChain": "https://worldchain-mainnet.gateway.tenderly.co"
+  "WorldChain": "https://worldchain-mainnet.gateway.tenderly.co",
+  "Polygon": "https://polygon-rpc.com/",
+  "zkSync": "https://mainnet.era.zksync.io",
+  "Gnosis-Chain": "https://rpc.gnosischain.com/",
+  "Aurora": "https://mainnet.aurora.dev",
+  "Kaia": "https://public-en-cypress.klaytn.net",
+  "Mantle": "https://rpc.mantle.xyz",
+  "Manta": "https://pacific-rpc.manta.network/http",
+  "Astar": "https://evm.astar.network",
+  "Moonbeam": "https://rpc.api.moonbeam.network",
+  "EOSEVM": "https://api.evm.eosnetwork.com",
+  "HyperLiquid": "https://rpc.hyperliquid-testnet.xyz/evm",
+  "Cronos": "https://evm.cronos.org"
 }

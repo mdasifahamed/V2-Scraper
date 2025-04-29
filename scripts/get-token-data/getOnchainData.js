@@ -36,6 +36,9 @@ async function getTokenDataAndWrite(
   endTo = endTo ? endTo + 1 : pairslength;
 
   try {
+    // Add allPairsLength at the top of the JSON file
+    pairList.push({ allPairsLength: pairslength });
+
     for (let i = startFrom; i < endTo; i++) {
       try {
         const pairAddress = await getPairsAddress(
