@@ -16,26 +16,25 @@
     "Linea": "0x02a84c1b3BBD7401a5f7fa98a384EBC70bB5749E",
     "Base": "0x02a84c1b3BBD7401a5f7fa98a384EBC70bB5749E"
   },
-  "ApeSwap": {
+  "Apeswap": {
     "BSC": "0x0841BD0B734E4F5853f0dD8d7Ea041c241fb0Da6",
     "Polygon": "0xCf083Be4164828f00cAE704EC15a36D711491284",
     "Ethereum": "0xBAe5dc9B19004883d0377419FeF3c2C8832d7d7B",
     "Arbitrum": "0xCf083Be4164828f00cAE704EC15a36D711491284"
   },
   "Quickswap": {
-    "Polygon": "0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff",
+    "Polygon": "0x5757371414417b8C6CAad45bAeF941aBc7d3Ab32",
     "Dogechain": "0xC3550497E591Ac6ed7a7E03ffC711CfB7412E57F"
   },
   "Dfyn": {
     "Polygon": "0xE7Fb3e833eFE5F9c441105EB65Ef8b261266423B",
-    "OKExChain": "0xE7Fb3e833eFE5F9c441105EB65Ef8b261266423B",
     "Fantom": "0xd9820a17053d6314B20642E465a84Bf01a3D64f5",
     "Arbitrum": "0xA102072A4C07F06EC3B4900FDC4C7B80b6c57429"
   },
   "DXswap": {
     "ETH": "0xd34971BaB6E5E356fd250715F5dE0492BB070452",
     "Arbitrum": "0x359F20Ad0F42D75a5077e65F30274cABe6f4F01a",
-    "Gnosis Chain": "0x5D48C95AdfFD4B40c1AAADc4e08fc44117E02179"
+    "GnosisChain": "0x5D48C95AdfFD4B40c1AAADc4e08fc44117E02179"
   },
   "Joe": {
     "BSC": "0x4f8bdc85E3eec5b9dE67097c3f59B6Db025d9986"
@@ -85,7 +84,7 @@
   "Solarflare": {
     "Moonbeam": "0x19B85ae92947E0725d5265fFB3389e7E4F191FDa"
   },
-  "Noah-Finance": {
+  "NoahFinance": {
     "EOSEVM": "0x75782A57c6522B8B17FCc01Ff11759f4535b2752"
   },
   "Neutroswap": {
@@ -93,17 +92,40 @@
   },
   "Hyperswap": {
     "HyperLiquid": "0x724412C00059bf7d6ee7d4a1d0D5cd4de3ea1C48"
-  }, 
-  "Corons" : {
-    "Ebisus": "0x5f1D751F447236f486F4268b883782897A902379"
+  },
+  "Ebisus": {
+    "Corons": "0x5f1D751F447236f486F4268b883782897A902379"
   },
   "Cronaswap": {
     "Cronos": "0x73A48f8f521EB31c55c0e1274dB0898dE599Cb11"
   },
-  "Crodex" : {
+  "Crodex": {
     "Cronos": "0xe9c29cB475C0ADe80bE0319B74AD112F1e80058F"
   },
-  "Photonswap" : {
+  "Photonswap": {
     "Corons": "0x462C98Cae5AffEED576c98A55dAA922604e2D875"
+  },
+  "Spookyswap": {
+    "Sonic": "0xEE4bC42157cf65291Ba2FE839AE127e3Cc76f741"
+  },
+  "ELK": {
+    "Avalanche": "0x091d35d7F63487909C863001ddCA481c6De47091",
+    "Polygon": "0xE3BD06c7ac7E1CeB17BdD2E5BA83E40D1515AF2a",
+    "Fantom": "0x7Ba73c99e6f01a37f3e33854c8F544BbbadD3420",
+    "GnosisChain": "0xCB018587dA9590A18f49fFE2b85314c33aF3Ad3B",
+    "BSC": "0x31aFfd875e9f68cd6Cd12Cee8943566c9A4bBA13",
+    "Cronos": "0xEEa0e2830D09D8786Cb9F484cA20898b61819ef1",
+    "Ethereum": "0x6511eBA915fC1b94b2364289CCa2b27AE5898d80",
+    "Arbitrum": "0xA59B2044EAFD15ee4deF138D410d764c9023E1F0",
+    "Optimism": "0xedfad3a0f42a8920b011bb0332ade632e552d846",
+    "Kava": "0xC012C4b3d253A8F22d5e4ADA67ea2236FF9778fc",
+    "Astar": "0xfbb4E52FEcc90924c79F980eb24a9794ae4aFFA4",
+    "Base": "0xfbb4E52FEcc90924c79F980eb24a9794ae4aFFA4",
+    "Linea": "0xfbb4E52FEcc90924c79F980eb24a9794ae4aFFA4"
+  },
+  "Jetswap": {
+    "BSC": "0x0eb58E5c8aA63314ff5547289185cC4583DfCBD5",
+    "Polygon": "0x668ad0ed2622C62E24f0d5ab6B6Ac1b9D2cD4AC7",
+    "Fantom": "0xf6488205957f0b4497053d6422F49e27944eE3Dd"
   }
 }

@@ -36,6 +36,7 @@ async function getTokenDataAndWrite(
   endTo = endTo ? endTo + 1 : pairslength;
 
   try {
+    console.log("Total Pairs Length: ", pairslength);
     // Add allPairsLength at the top of the JSON file
     pairList.push({ allPairsLength: pairslength });
 

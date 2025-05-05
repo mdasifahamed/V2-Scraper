@@ -61,7 +61,7 @@ async function main(
    If everthing is configured up properly you have to run the following command to use it .
 
 ```bash
-    node scripts/main.js
+    npm run scrap [dexname] [networkName] [startingPair] [endingPair]
 ```
 
 ## Bonus

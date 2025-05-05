@@ -5,6 +5,10 @@
     "hardhat": "^2.22.15"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "scrap": "node scripts/main.js"
   }
 }

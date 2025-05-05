@@ -1,6 +1,11 @@
 const factoryAddresses = require("../Factory_Address.json");
 const mainnet_RPC_URL = require("../Mainnet_URL.json");
 const { getTokenDataAndWrite } = require("./get-token-data/getOnchainData");
+const lodash = require("lodash");
+const chainMap = require("../map.json");
+const path = require("path");
+
+const args = process.argv;
 
 /**
  *
@@ -13,6 +18,38 @@ const { getTokenDataAndWrite } = require("./get-token-data/getOnchainData");
  * @param {number} endFrom ending index till which number user want to pull information
  *
  */
+
+if (args.length < 6 || args.length > 6) {
+  throw new Error(`Invaild Args`);
+}
+const dexName = args[2];
+const networks = args[3];
+const startingPoint = args[4];
+const endingPoint = args[5];
+
+const network = chainMap[networks.toLocaleLowerCase()];
+if (!network) {
+  throw new Error("Invalid Chain Name");
+}
+
+const defiAddresses = factoryAddresses[lodash.startCase(dexName)];
+if (!defiAddresses) {
+  throw new Error("Invalid Defi Name");
+}
+
+const factoryAddress = defiAddresses[network];
+if (!factoryAddress) {
+  throw new Error(
+    "Factory Address not found for the specified Defi Name and Network"
+  );
+}
+const provider = mainnet_RPC_URL[network];
+if (!provider) {
+  throw new Error(
+    "Provider  not found for the specified Defi Name and Network"
+  );
+}
+const fileName = `${lodash.startCase(dexName)}-${networks}`;
 async function main(
   _factoryContractAddress,
   _provider_url,
@@ -33,15 +70,9 @@ async function main(
   }
 }
 
-Object.keys(factoryAddresses).forEach((protocol) => {
-  Object.keys(factoryAddresses[protocol]).forEach((network) => {
-    const factoryAddress = factoryAddresses[protocol][network];
-    const rpcUrl = mainnet_RPC_URL[network];
-    const fileName = `${protocol}-${network}`;
-    main(factoryAddress, rpcUrl, fileName, 1, 5)
-      .catch((error) => {
-        console.log(`Error processing ${fileName}:`, error);
-        process.exit(1);
-      });
-  });
-});
+main(factoryAddress, provider, fileName, startingPoint, endingPoint).catch(
+  (error) => {
+    console.log(error);
+    process.exit(1);
+  }
+);

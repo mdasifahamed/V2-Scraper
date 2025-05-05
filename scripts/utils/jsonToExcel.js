@@ -1,6 +1,6 @@
 const XLSX = require("xlsx");
 const fs = require("fs");
-const DexName_ChainName = require("Path Of The Created Json File");
+const DexName_ChainName = require("../dex-data/Trisolaris-Aurora.json");
 /**
  * jsonToXlsx() creates a .xlsx from a json file.
  * @param {object} jsonData json need to dump into a .xlsx file
@@ -22,4 +22,4 @@ function jsonToXlsx(jsonData, outputFilePath) {
   console.log(`File saved as ${outputFilePath}`);
 }
 
-jsonToXlsx(DexName_ChainName, "YourExpectdFileName.xlsx");
+jsonToXlsx(DexName_ChainName, "Trisolaris.xlsx");
