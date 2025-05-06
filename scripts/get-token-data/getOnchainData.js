@@ -56,7 +56,8 @@ async function getTokenDataAndWrite(
         const [reserve0, reserve1] = await pairContract.getReserves();
         const token0Info = await getTokenInfo(token0Address, _provider_url);
         const token1InFo = await getTokenInfo(token1Address, _provider_url);
-
+        const lastPair = JSON.stringify({ lastPair: i }, null, 2);
+        fs.writeFileSync(`track.json`, lastPair);
         const pairInfo = {
           PairAddress: pairAddress,
           Token0Name: token0Info.tokenName,
