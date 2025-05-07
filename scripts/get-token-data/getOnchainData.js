@@ -29,11 +29,16 @@ async function getTokenDataAndWrite(
   }
 
   let pairList = [];
-  if (startFrom === 0 || startFrom < 0 || endTo === 0 || endTo < 0) {
+  if (startFrom === 0 || startFrom < 0) {
     throw new Error("Strating Or Ending Index Cannot Be 0 Negative");
   }
+
+  console.log(`Before Checks startForm; ${startFrom}`);
+  console.log(`Before Check endTo; ${endTo}`);
   startFrom = startFrom ? startFrom - 1 : 0;
-  endTo = endTo ? endTo + 1 : pairslength;
+  endTo = endTo ? endTo : pairslength;
+  console.log(`After Checks startForm; ${startFrom}`);
+  console.log(`After Check endTo; ${endTo}`);
 
   try {
     console.log("Total Pairs Length: ", pairslength);
