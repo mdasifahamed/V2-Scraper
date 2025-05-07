@@ -62,8 +62,8 @@ async function main(
       _factoryContractAddress,
       _provider_url,
       _fileName,
-      startFrom,
-      endTo
+      parseInt(startFrom),
+      parseInt(endTo)
     );
   } catch (error) {
     console.log(error);
